@@ -42,6 +42,10 @@ while (userInput.toUpperCase() !== `CLOSE`){
       showTasks += `${i + 1}: ${tasks[i]}\n`;
     }
     num = prompt(`Please enter a number to remove:\n${showTasks}`) - 1;
+    while(Math.floor(num) !== num || num < 0 || num >= tasks.length || !num){
+      alert(`Not a valid entry`);
+      num = prompt(`Please enter a number to remove:\n${showTasks}`) - 1;
+    }
     removed = tasks.splice(num, 1);
     alert(`"${removed[0]}" has been removed`);
     showTasks = ``;
