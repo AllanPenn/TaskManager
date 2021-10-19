@@ -17,6 +17,10 @@ let showTasks = ``;
 
 let newTask;
 
+let num;
+
+let removed;
+
 let userInput = prompt(menu);
 
 while (userInput.toUpperCase() !== `CLOSE`){
@@ -30,6 +34,14 @@ while (userInput.toUpperCase() !== `CLOSE`){
     newTask = prompt(`Please enter the new task:`);
     alert(`"${newTask}" has been added!`);
     tasks.push(newTask);
+  } else if (userInput.toUpperCase() === `REMOVE`){
+    for(i = 0; i < tasks.length; i++){
+      showTasks += `${i + 1}: ${tasks[i]}\n`;
+    }
+    num = prompt(`Please enter a number to remove:\n${showTasks}`) - 1;
+    removed = tasks.splice(num, 1);
+    alert(`"${removed[0]}" has been removed`);
+    showTasks = ``;
   }
   userInput = prompt(menu);
 }
