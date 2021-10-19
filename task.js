@@ -15,6 +15,8 @@ const tasks = [
 
 let showTasks = ``;
 
+let newTask;
+
 let userInput = prompt(menu);
 
 while (userInput.toUpperCase() !== `CLOSE`){
@@ -23,6 +25,11 @@ while (userInput.toUpperCase() !== `CLOSE`){
       showTasks += `${task}\n`;
     }
     alert(showTasks);
+    showTasks = ``;
+  } else if (userInput.toUpperCase() === `NEW`){
+    newTask = prompt(`Please enter the new task:`);
+    alert(`"${newTask}" has been added!`);
+    tasks.push(newTask);
   }
   userInput = prompt(menu);
 }
