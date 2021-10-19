@@ -32,6 +32,9 @@ while (userInput.toUpperCase() !== `CLOSE`){
     showTasks = ``;
   } else if (userInput.toUpperCase() === `NEW`){
     newTask = prompt(`Please enter the new task:`);
+    while(newTask === ``){
+      newTask = prompt(`Please enter the new task:`);
+    }
     alert(`"${newTask}" has been added!`);
     tasks.push(newTask);
   } else if (userInput.toUpperCase() === `REMOVE`){
