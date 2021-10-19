@@ -8,10 +8,22 @@ What would you like to do (Please enter one of the options below):
 
 `;
 
+const tasks = [
+  `Charge MacBook`,
+  `Master JavaScript`
+];
+
+let showTasks = ``;
+
 let userInput = prompt(menu);
 
 while (userInput.toUpperCase() !== `CLOSE`){
-
+  if (userInput.toUpperCase() === `TASKS`){
+    for (task of tasks){
+      showTasks += `${task}\n`;
+    }
+    alert(showTasks);
+  }
   userInput = prompt(menu);
 }
 
