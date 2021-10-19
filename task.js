@@ -8,4 +8,14 @@ What would you like to do (Please enter one of the options below):
 
 `;
 
-prompt(menu);
+let userInput = prompt(menu);
+
+while (userInput.toUpperCase() !== `CLOSE`){
+  
+  if (userInput.toUpperCase() === "TASKS"){
+    alert(`This is the TASKS feature`)
+  }
+  userInput = prompt(menu);
+}
+
+alert(`Thank you for using Task Manger`);
